@@ -1,0 +1,203 @@
+[
+    {
+        "name": "Agricultural & Life Sciences Bldg",
+        "lat":  44.566880404406746,
+        "lng": -123.28187136407556
+      },
+      {
+        "name": "Arnold Dining Center",
+        "lat": 44.56084640896039, 
+        "lng": -123.2776794
+      },
+      {
+        "name": "Cascade Hall",
+        "lat": 44.56234295829046, 
+        "lng": -123.27512696816207 
+      },
+      {
+        "name": "Champinefu Lodge",
+        "lat": 44.56593763658722, 
+        "lng": -123.26882239884331 
+      },
+      {
+        "name": "OSU Boathouse",
+        "lat": 44.56728472400302, 
+        "lng": -123.25456388349946
+      },
+      {
+        "name": "Clark Laboratory",
+        "lat": 44.566099585543164, 
+        "lng": -123.28738299089636
+      },
+      {
+        "name": "Dixon Recreation Center",
+        "lat": 44.56728472400302, 
+        "lng": -123.25456388349946
+      },
+      {
+        "name": "OSU Boathouse",
+        "lat": 44.563572402752676,
+        "lng":  -123.27846649884518
+      },
+      {
+        "name": "Gill Coliseum",
+        "lat": 44.56184140133547, 
+        "lng": -123.28056956021604
+      },
+      {
+        "name": "Goss Stadium",
+        "lat": 44.56326960498074, 
+        "lng": -123.27722209089923 
+      },
+      {
+        "name": "Gymnastics Practice Facility",
+        "lat": 44.55163559896685, 
+        "lng": -123.29669863693734
+      },
+      {
+        "name": "Gleeson Hall",
+        "lat": 44.56785426350698, 
+        "lng": -123.27659912952598
+      },
+      {
+        "name": "Hinsdale Wave Research Laboratory",
+        "lat": 44.564383300086156, 
+        "lng": -123.29124748350225
+      },
+      {
+        "name": "Jefferson Street Building",
+        "lat": 44.565852036991515, 
+        "lng": -123.29328659089714 
+      },
+      {
+        "name": "John L. Fryer Aquatic Animal Health Laboratory",
+        "lat": 44.57637747386039, 
+        "lng": -123.24104513691418
+      },
+      {
+        "name": "International Living Learning Center",
+        "lat": 44.56104953162562, 
+        "lng": -123.27630587555907
+      },
+      {
+        "name": "Kelley Engineering Center",
+        "lat": 44.56777534207591, 
+        "lng": -123.27831403747211
+      },
+      {
+        "name": "Linus Pauling Science Center",
+        "lat": 44.56730641864454, 
+        "lng": -123.28377332158033
+      },
+      {
+        "name": "Langton Hall",
+        "lat": 44.564705972729115, 
+        "lng": -123.27856272158257
+      },
+      {
+        "name": "Memorial Union",
+        "lat": 44.56576616382768, 
+        "lng":-123.27893076021269
+      },
+      {
+        "name": "Magruder Hall",
+        "lat": 44.56162691002175, 
+        "lng": -123.28500236021671
+      },
+      {
+        "name": "McAlexander Fieldhouse",
+        "lat": 44.564342645488225, 
+        "lng": -123.27547369089817
+      },
+      {
+        "name": "McNary Dining Center",
+        "lat": 44.564421069260675, 
+        "lng": -123.27203432952885
+      },
+      {
+        "name": "Motor Pool Annex",
+        "lat":44.5668868000969, 
+        "lng": -123.2869820062383
+      },
+      {
+        "name": "Oak Creek Building",
+        "lat": 44.55822442114132, 
+        "lng": -123.2855515448771 
+      },
+      {
+        "name": "OSU Cascades Graduate And Research Center",
+        "lat": 44.04479534554644, 
+        "lng": -121.32325171467062
+      },
+      {
+        "name": "P. Wayne Valley Sports Performance Center",
+        "lat": 44.56165048055971, 
+        "lng":-123.28152979884723
+      },
+      {
+        "name": "Plageman Student Health Center",
+        "lat": 44.568520977109635, 
+        "lng": -123.27799996815625
+      },
+      {
+        "name": "OSU Forest Offices",
+        "lat": 44.65925837579074, 
+        "lng":-123.23516656012478
+      },
+      {
+        "name": "Research Way Laboratory",
+        "lat": 44.55297167178052, 
+        "lng": -123.30345916022448
+      },
+      {
+        "name": "RAIL Lab Bldg",
+        "lat": 44.565655664191844, 
+        "lng": -123.30909289089729
+      },
+      {
+        "name": "Strand Agriculture Hall",
+        "lat": 44.566136833656856, 
+        "lng": -123.2774102215812
+      },
+      {
+        "name": "Snell Hall",
+        "lat": 44.56498034555663, 
+        "lng": -123.27638837555553
+      },
+      {
+        "name": "SB Office/Headquarters",
+        "lat": 44.564707851424956, 
+        "lng": -123.27495815226733
+      },
+      {
+        "name": "UHDS Maintenance Center",
+        "lat": 44.562285559044575, 
+        "lng": -123.28945716761199
+      },
+      {
+        "name": "Umatilla Hall",
+        "lat": 45.67870233825099, 
+        "lng": -118.81525265916002 
+      },
+      {
+        "name": "Valley Football Center",
+        "lat": 44.56095865425707, 
+        "lng": -123.2822319602172
+      },
+      {
+        "name": "Weatherford Hall",
+        "lat": 44.564604470842944, 
+        "lng": -123.28045182952889
+      }
+      ,
+      {
+        "name": "Women's Building",
+        "lat": 44.96142918925791, 
+        "lng": -123.3933074469209
+      },
+      {
+        "name": "Wiegand Hall",
+        "lat": 44.5677461423675, 
+        "lng": -123.28525952952603
+      }
+]
