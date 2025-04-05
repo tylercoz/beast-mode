@@ -3,13 +3,35 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Beast Mode</title>
         <!-- jquery -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- CSS -->
+        <link rel="stylesheet" href="style.css">
+        <!-- javascript -->
+        <script src="app.js"></script>
+
+        <!-- google maps -->
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB4-jmsiiXUWsxG7tEclGAM0YlF_ivmQ8&libraries=places&callback=initMap"
+            async
+            defer
+        ></script>
     </head>
     <body>
-        <h1>Beast Mode</h1>
-        <p>Need to shit/shower? Enter your location.</p>
-        Hello World
+        <div class="container">
+            <h1>BEAST MODE</h1>
+            <p class="tagline">Need to <span class="beast-mode-text">shower</span>? Activate Beast Mode to find the nearest shower on campus.</p>
+            
+            <!-- Beast Mode Toggle Switch -->
+            <label class="beast-switch">
+                <input type="checkbox" id="beastModeToggle">
+                <span class="beast-slider"></span>
+            </label>
+            
+            <div id="map"></div>
+            <div id="status">Beast Mode OFF</div>
+            <div id="showerList"></div>
+        </div>
     </body>
 </html>
