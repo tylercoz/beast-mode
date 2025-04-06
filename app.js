@@ -1,10 +1,18 @@
 async function initMap() {
-  function addLocations() {
-    new AdvancedMarkerElement({
-      position: { lat: 44.5668, lng: -123.2818 },
-      map: map,
-      title: "You Are Here",
-    });
+  async function addLocations() {
+    fetch("./showers.json")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        for (let id in data) {
+          console.log(`Key: ${id}, value: ${data[id].name}`);
+          new AdvancedMarkerElement({
+            position: { lat: data[id].lat, lng: data[id].lng },
+            map: map,
+            title: data[id].name,
+          });
+        }
+      });
   }
 
   function getCurrentLocation(map) {
