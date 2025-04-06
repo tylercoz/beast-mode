@@ -62,8 +62,8 @@ async function initMap() {
 
           const image = document.createElement("img");
           image.src = "data/you_are_here.png";
-          image.width = 75;
-          image.height = 75;
+          image.width = 80;
+          image.height = 80;
 
           const userMarker = new AdvancedMarkerElement({
             position: pos,
@@ -78,8 +78,7 @@ async function initMap() {
           // Add info window for user location
           const userInfoWindow = new google.maps.InfoWindow({
             content: `
-          <h3>You Are Here</h3>
-          <p><a href="${userMapsUrl}" target="_blank">Get Directions From Here</a></p>
+          <h3>Your Location</h3>
         `,
           });
 
