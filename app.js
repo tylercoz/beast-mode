@@ -1,3 +1,4 @@
+
 async function initMap() {
   function getCurrentLocation(map) {
     if (navigator.geolocation) {
@@ -56,23 +57,49 @@ function deselect(e) {
   });    
 }
 
-$(function() {
-  $('#contact').on('click', function() {
-    if($(this).hasClass('selected')) {
-      deselect($(this));               
-    } else {
-      $(this).addClass('selected');
-      $('.pop').slideFadeToggle();
-    }
-    return false;
+$(document).ready(function () {
+  // Use jQuery selectors instead of vanilla JS
+  const $openModalButtons = $('[data-modal-target]');
+  const $closeModalButtons = $('[data-close-button]');
+  const $overlay = $('#overlay'); // Now properly waits for DOM
+
+  // Modal open/close logic
+  $openModalButtons.on('click', function () {
+    const modalSelector = $(this).data('modal-target');
+    const $modal = $(modalSelector);
+    openModal($modal);
   });
 
-  $('.close').on('click', function() {
-    deselect($('#contact'));
-    return false;
+  $overlay.on('click', function () {
+    $('.modal.active').each(function () {
+      closeModal($(this));
+    });
+  });
+
+  $closeModalButtons.on('click', function () {
+    const $modal = $(this).closest('.modal');
+    closeModal($modal);
+  });
+
+  // Beast Mode Toggle (unchanged)
+  $("#beastModeToggle").on("change", function () {
+    if ($(this).is(":checked")) {
+      getCurrentLocation(map);
+    } else {
+      // TODO: Handle toggle off
+    }
   });
 });
 
-$.fn.slideFadeToggle = function(easing, callback) {
-  return this.animate({ opacity: 'toggle', height: 'toggle' }, 'fast', easing, callback);
-};
+// Modal functions (updated for jQuery)
+function openModal($modal) {
+  if (!$modal || $modal.length === 0) return;
+  $modal.addClass('active');
+  $('#overlay').addClass('active');
+}
+
+function closeModal($modal) {
+  if (!$modal || $modal.length === 0) return;
+  $modal.removeClass('active');
+  $('#overlay').removeClass('active');
+}
