@@ -1,73 +1,104 @@
+/* BEAST MODE STYLESHEET - COMPLETE VERSION */
+
+/* ===== FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Black+Ops+One&family=Audiowide&display=swap');
+
+/* ===== COLOR VARIABLES ===== */
+:root {
+  /* Color Palette */
+  --bm-black: #000000;
+  --bm-dark: #111111;
+  --bm-neon: #00FF00;
+  --bm-accent: #FF4500;
+  --bm-glow: 0 0 10px #00FF00;
+  --bm-accent-glow: 0 0 10px #FF4500;
+  
+  /* Font Stack */
+  --bm-font-display: 'Bungee Shade', cursive;
+  --bm-font-primary: 'Black Ops One', sans-serif;
+  --bm-font-secondary: 'Audiowide', sans-serif;
+}
+
+/* ===== BASE STYLES ===== */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 20px;
-    color: #333;
+  background-color: var(--bm-black);
+  color: var(--bm-neon);
+  font-family: var(--bm-font-primary);
+  margin: 0;
+  padding: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.6;
 }
 
+/* ===== LAYOUT ===== */
 .container {
-    max-width: 600px;
-    margin: 0 auto;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(0,0,0,0.7);
+  padding: 30px;
+  border: 3px solid var(--bm-neon);
+  box-shadow: var(--bm-glow);
+  border-radius: 5px;
 }
 
+/* ===== TYPOGRAPHY ===== */
 h1 {
-    text-align: center;
-    color: #2c3e50;
-    margin-bottom: 10px;
+  font-family: var(--bm-font-display);
+  font-size: 3.5rem;
+  text-shadow: var(--bm-glow), 0 0 20px var(--bm-neon);
+  margin: 10px 0;
+  color: var(--bm-neon);
+  line-height: 1;
+  text-align: center;
 }
 
 .tagline {
-    text-align: center;
-    color: #7f8c8d;
-    margin-bottom: 30px;
+  font-family: var(--bm-font-secondary);
+  font-size: 1.2rem;
+  color: #AAA;
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow: 0 0 5px var(--bm-neon);
 }
 
 .beast-mode-text {
-    font-weight: bold;
-    color: #e74c3c;
-    text-transform: uppercase;
-    animation: pulse 2s infinite;
+  color: var(--bm-accent);
+  text-shadow: var(--bm-accent-glow);
+  font-weight: bold;
+  animation: pulse 0.5s infinite alternate;
 }
 
-/* Beast Mode Switch */
+/* ===== BEAST MODE TOGGLE ===== */
 .beast-switch {
     position: relative;
-    display: inline-block;
+    display: block;
     width: 120px;
     height: 60px;
-    margin: 20px auto;
-    display: block;
-}
-
-.beast-switch input {
+    margin: 30px auto;
+    filter: drop-shadow(var(--bm-glow));
+  }
+  
+  .beast-switch input {
     opacity: 0;
     width: 0;
     height: 0;
-}
-
-.beast-slider {
+  }
+  
+  .beast-slider {
     position: absolute;
     cursor: pointer;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: var(--bm-accent); /* Red when off */
     transition: .4s;
     border-radius: 60px;
-    text-align: center;
-    line-height: 60px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: white;
-}
-
-.beast-slider:before {
+    border: 2px solid var(--bm-accent);
+  }
+  
+  .beast-slider:before {
     position: absolute;
     content: "";
     height: 50px;
@@ -77,43 +108,109 @@ h1 {
     background-color: white;
     transition: .4s;
     border-radius: 50%;
-}
-
-input:checked + .beast-slider {
-    background-color: #2ab033;
-}
-
-input:checked + .beast-slider:before {
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  }
+  
+  #beastModeToggle:checked + .beast-slider {
+    background-color: var(--bm-neon); /* Green when on */
+    border-color: var(--bm-neon);
+  }
+  
+  #beastModeToggle:checked + .beast-slider:before {
     transform: translateX(60px);
-}
+  }
+  
+  /* Status text indicator */
+  #status::before {
+    content: "BEAST MODE: OFF";
+  }
+  
+  #beastModeToggle:checked ~ #status::before {
+    content: "BEAST MODE: ON";
+  }
+  
+  /* Color the status text based on state */
+  #status {
+    color: var(--bm-accent); /* Red when off */
+    border-left-color: var(--bm-accent);
+  }
+  
+  #beastModeToggle:checked ~ #status {
+    color: var(--bm-neon); /* Green when on */
+    border-left-color: var(--bm-neon);
+  }
 
-.beast-slider:after {
-    content: "OFF";
-    position: absolute;
-    left: 15px;
-}
-
-input:checked + .beast-slider:after {
-    content: "ON";
-    left: auto;
-    right: 15px;
-}
-
-/* Map */
+/* ===== MAP STYLING ===== */
 #map {
-    height: 400px;
-    width: 100%;
-    margin: 20px 0;
-    border-radius: 8px;
-    border: 1px solid #ddd;
+  height: 400px;
+  width: 100%;
+  margin: 20px 0;
+  border: 3px solid var(--bm-neon);
+  border-radius: 8px;
+  filter: drop-shadow(var(--bm-glow));
 }
 
-/* Status */
+/* ===== STATUS DISPLAY ===== */
 #status {
-    padding: 10px;
-    background-color: #f8f9fa;
-    border-radius: 6px;
-    margin: 10px 0;
-    text-align: center;
+  padding: 12px;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 6px;
+  border-left: 4px solid var(--bm-neon);
+  margin: 15px 0;
+  font-family: var(--bm-font-secondary);
+  text-shadow: 0 0 5px var(--bm-neon);
+  text-align: center;
+  font-weight: bold;
 }
 
+/* ===== SHOWER LIST ===== */
+#showerList {
+  margin-top: 20px;
+  background-color: rgba(20,20,20,0.8);
+  border-radius: 8px;
+  padding: 15px;
+  border: 1px solid #333;
+}
+
+.shower-item {
+  padding: 12px;
+  border-bottom: 1px solid #333;
+  transition: all 0.3s;
+}
+
+.shower-item:last-child {
+  border-bottom: none;
+}
+
+.shower-item:hover {
+  background-color: rgba(50,50,50,0.5);
+  transform: translateX(5px);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes pulse {
+  0% { 
+    opacity: 0.8;
+    text-shadow: 0 0 5px var(--bm-accent);
+  }
+  100% { 
+    opacity: 1;
+    text-shadow: 0 0 20px var(--bm-accent), 0 0 30px #FF4500;
+  }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  .container {
+    padding: 20px;
+    margin: 0 15px;
+  }
+  
+  #map {
+    height: 300px;
+  }
+}
