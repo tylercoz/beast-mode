@@ -4,7 +4,6 @@ async function initMap() {
   let beastModeOn = false;
   let locationPermissionDenied = false;
 
-
   async function addLocations(map) {
     try {
       const response = await fetch("./showers.json");
@@ -101,7 +100,6 @@ async function initMap() {
             beastModeOn = false;
             const $modal = $("#modal");
             openModal($modal);
-
           }
         },
       );
@@ -127,10 +125,10 @@ async function initMap() {
   });
 
   $(document).ready(function () {
-    const $openModalButtons = $('[data-modal-target]');
-    const $closeModalButtons = $('[data-close-button]');
-    const $overlay = $('#overlay'); // Now properly waits for DOM
-    
+    const $openModalButtons = $("[data-modal-target]");
+    const $closeModalButtons = $("[data-close-button]");
+    const $overlay = $("#overlay"); // Now properly waits for DOM
+
     $("#beastModeToggle").on("change", function () {
       if ($(this).is(":checked")) {
         getCurrentLocation(map);
@@ -145,48 +143,47 @@ async function initMap() {
 
         map.setCenter({ lat: 44.5648, lng: -123.276 });
         map.setZoom(15);
-
       }
     });
 
-      // Modal open/close logic
-  $openModalButtons.on('click', function () {
-    const modalSelector = $(this).data('modal-target');
-    const $modal = $(modalSelector);
-    openModal($modal);
-  });
-
-  $overlay.on('click', function () {
-    $('.modal.active').each(function () {
-      closeModal($(this));
+    // Modal open/close logic
+    $openModalButtons.on("click", function () {
+      const modalSelector = $(this).data("modal-target");
+      const $modal = $(modalSelector);
+      openModal($modal);
     });
-  });
 
-  $closeModalButtons.on('click', function () {
-    const $modal = $(this).closest('.modal');
-    closeModal($modal);
-  });
+    $overlay.on("click", function () {
+      $(".modal.active").each(function () {
+        closeModal($(this));
+      });
+    });
 
-  // Beast Mode Toggle (unchanged)
-  $("#beastModeToggle").on("change", function () {
-    if ($(this).is(":checked")) {
-      getCurrentLocation(map);
-    } else {
-      // TODO: Handle toggle off
-    }
-  });
+    $closeModalButtons.on("click", function () {
+      const $modal = $(this).closest(".modal");
+      closeModal($modal);
+    });
+
+    // Beast Mode Toggle (unchanged)
+    $("#beastModeToggle").on("change", function () {
+      if ($(this).is(":checked")) {
+        getCurrentLocation(map);
+      } else {
+        // TODO: Handle toggle off
+      }
+    });
   });
 }
 
 // Modal functions (updated for jQuery)
 function openModal($modal) {
   if (!$modal || $modal.length === 0) return;
-  $modal.addClass('active');
-  $('#overlay').addClass('active');
+  $modal.addClass("active");
+  $("#overlay").addClass("active");
 }
 
 function closeModal($modal) {
   if (!$modal || $modal.length === 0) return;
-  $modal.removeClass('active');
-  $('#overlay').removeClass('active');
+  $modal.removeClass("active");
+  $("#overlay").removeClass("active");
 }
