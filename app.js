@@ -15,7 +15,7 @@ async function initMap() {
           image.height = 75;
           const { AdvancedMarkerElement } =
             await google.maps.importLibrary("marker");
-          const marker = new AdvancedMarkerElement({
+          new AdvancedMarkerElement({
             position: pos,
             map: map,
             title: "You Are Here",
