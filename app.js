@@ -1,4 +1,12 @@
 async function initMap() {
+  function addLocations() {
+    new AdvancedMarkerElement({
+      position: { lat: 44.5668, lng: -123.2818 },
+      map: map,
+      title: "You Are Here",
+    });
+  }
+
   function getCurrentLocation(map) {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -10,11 +18,9 @@ async function initMap() {
           map.setCenter(pos);
 
           const image = document.createElement("img");
-          image.src = "you_are_here.png";
+          image.src = "data/you_are_here.png";
           image.width = 75;
           image.height = 75;
-          const { AdvancedMarkerElement } =
-            await google.maps.importLibrary("marker");
           new AdvancedMarkerElement({
             position: pos,
             map: map,
@@ -37,12 +43,14 @@ async function initMap() {
 
   // New map
   const { Map } = await google.maps.importLibrary("maps");
+  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
   let map = new Map(document.getElementById("map"), options);
 
   $(document).ready(function () {
     $("#beastModeToggle").on("change", function () {
       if ($(this).is(":checked")) {
         getCurrentLocation(map);
+        addLocations(map);
       } else {
         // TODO stinky image?
       }
