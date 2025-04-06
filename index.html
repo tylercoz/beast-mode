@@ -21,6 +21,7 @@
         ></script>
 
         <script scr="DO_NOT_OPEN.js"></script>
+        <script src="status_updater.js"></script>
     </head>
     <body>
         <div class="container">
@@ -32,7 +33,11 @@
 
             <!-- Beast Mode Toggle Switch -->
             <label class="beast-switch">
-                <input type="checkbox" id="beastModeToggle" />
+                <input
+                    type="checkbox"
+                    id="beastModeToggle"
+                    onchange="toggleText()"
+                />
                 <span class="beast-slider"></span>
             </label>
             <div id="status"></div>
@@ -49,14 +54,19 @@
 
         <!-- <button data-modal-target="#modal">Open Modal</button> -->
         <div class="modal" id="modal">
-          <div class="modal-header">
-            <div class="title">PEE-EW, YOU STINK!</div>
-            <button data-close-button class="close-button">&times;</button>
-          </div>
-          <div class="modal-body">
-            <img src="/data/stinky.png" alt="yellow emoji dude holding his nose and giving you a bar of soap" id="modal-photo">
-            You stink! You need to shower. Try reactivating Beast Mode to find a shower!
-          </div>
+            <div class="modal-header">
+                <div class="title">PEE-EW, YOU STINK!</div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img
+                    src="/data/stinky.png"
+                    alt="yellow emoji dude holding his nose and giving you a bar of soap"
+                    id="modal-photo"
+                />
+                You stink! You need to shower. Try reactivating Beast Mode to
+                find a shower!
+            </div>
         </div>
         <div id="overlay"></div>
     </body>

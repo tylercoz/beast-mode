@@ -1,50 +1,51 @@
 /* ===== FONTS ===== */
-@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Goblin+One&family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&family=Goblin+One&family=Press+Start+2P&display=swap");
 
 /* ===== COLOR VARIABLES ===== */
 :root {
-  /* New Psycho Color Palette */
-  --bm-black: #000000;
-  --bm-neon: #020702;
-  --bm-accent: #FF0000; /* Brighter red */
-  --bm-glow: 0 0 15px #00FF00, 0 0 30px #00FF00;
-  --bm-accent-glow: 0 0 15px #FF0000, 0 0 30px #FF0000;
-  
-  /* Extreme Font Stack */
-  --bm-font-display: 'Goblin One', cursive; /* Craziest option */
-  --bm-font-primary: 'Russo One', sans-serif; 
-  --bm-font-secondary: 'Press Start 2P', cursive; /* Retro game feel */
-}
+    /* New Psycho Color Palette */
+    --bm-black: #000000;
+    --bm-neon: #020702;
+    --bm-accent: #ff0000; /* Brighter red */
+    --bm-glow: 0 0 15px #00ff00, 0 0 30px #00ff00;
+    --bm-accent-glow: 0 0 15px #ff0000, 0 0 30px #ff0000;
 
+    /* Extreme Font Stack */
+    --bm-font-display: "Goblin One", cursive; /* Craziest option */
+    --bm-font-primary: "Russo One", sans-serif;
+    --bm-font-secondary: "Press Start 2P", cursive; /* Retro game feel */
+}
 
 /* ===== BASE STYLES ===== */
 body {
-  background-color: var(--bm-black);
-  color: var(--bm-neon);
-  font-family: var(--bm-font-primary);
-  margin: 0;
-  padding: 20px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  line-height: 1.6;
+    background-color: var(--bm-black);
+    color: var(--bm-neon);
+    font-family: var(--bm-font-primary);
+    margin: 0;
+    padding: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.6;
 }
 
 /* ===== LAYOUT ===== */
 .container {
-  max-width: 600px;
-  margin: 0 auto;
-  background: rgba(0,0,0,0.7);
-  padding: 30px;
-  border: 3px solid var(--bm-neon);
-  box-shadow: var(--bm-glow);
-  border-radius: 5px;
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border: 3px solid var(--bm-neon);
+    box-shadow: var(--bm-glow);
+    border-radius: 5px;
 }
 
 /* ===== TYPOGRAPHY ===== */
 h1 {
     font-family: var(--bm-font-display);
     font-size: 4rem;
-    text-shadow: var(--bm-glow), 0 0 40px var(--bm-neon);
+    text-shadow:
+        var(--bm-glow),
+        0 0 40px var(--bm-neon);
     margin: 10px 0;
     color: var(--bm-neon);
     line-height: 1;
@@ -52,31 +53,45 @@ h1 {
     letter-spacing: -1px;
     transform: skew(-10deg);
     animation: vibrate 0.3s infinite alternate;
-  }
-  
-  .tagline {
+}
+
+.tagline {
     font-family: var(--bm-font-secondary);
     font-size: 1.3rem;
-    color: #FF00FF; /* Crazy magenta */
+    color: #ff00ff; /* Crazy magenta */
     margin-bottom: 30px;
-    text-shadow: 0 0 10px #FF00FF;
+    text-shadow: 0 0 10px #ff00ff;
     text-align: center;
     animation: colorCycle 5s infinite;
-  }
-  
-  /* New Extreme Animations */
-  @keyframes vibrate {
-    0% { transform: skew(-10deg) translateX(0); }
-    100% { transform: skew(-10deg) translateX(5px); }
-  }
-  
-  @keyframes colorCycle {
-    0% { color: #FF00FF; }
-    25% { color: #00FFFF; }
-    50% { color: #FFFF00; }
-    75% { color: #FF00FF; }
-    100% { color: #00FFFF; }
-  }
+}
+
+/* New Extreme Animations */
+@keyframes vibrate {
+    0% {
+        transform: skew(-10deg) translateX(0);
+    }
+    100% {
+        transform: skew(-10deg) translateX(5px);
+    }
+}
+
+@keyframes colorCycle {
+    0% {
+        color: #ff00ff;
+    }
+    25% {
+        color: #00ffff;
+    }
+    50% {
+        color: #ffff00;
+    }
+    75% {
+        color: #ff00ff;
+    }
+    100% {
+        color: #00ffff;
+    }
+}
 
 /* ===== BEAST MODE TOGGLE ===== */
 .beast-switch {
@@ -86,15 +101,15 @@ h1 {
     height: 60px;
     margin: 30px auto;
     filter: drop-shadow(var(--bm-glow));
-  }
-  
-  .beast-switch input {
+}
+
+.beast-switch input {
     opacity: 0;
     width: 0;
     height: 0;
-  }
-  
-  .beast-slider {
+}
+
+.beast-slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -102,12 +117,12 @@ h1 {
     right: 0;
     bottom: 0;
     background-color: var(--bm-accent); /* Red when off */
-    transition: .4s;
+    transition: 0.4s;
     border-radius: 60px;
     border: 2px solid var(--bm-accent);
-  }
-  
-  .beast-slider:before {
+}
+
+.beast-slider:before {
     position: absolute;
     content: "";
     height: 50px;
@@ -115,173 +130,152 @@ h1 {
     left: 5px;
     bottom: 5px;
     background-color: white;
-    transition: .4s;
+    transition: 0.4s;
     border-radius: 50%;
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
-  }
-  
-  #beastModeToggle:checked + .beast-slider {
-    background-color: #00FF00; /* Green when on */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+#beastModeToggle:checked + .beast-slider {
+    background-color: #00ff00; /* Green when on */
     border-color: var(--bm-neon);
-  }
-  
-  #beastModeToggle:checked + .beast-slider:before {
+}
+
+#beastModeToggle:checked + .beast-slider:before {
     transform: translateX(60px);
-  }
-  
-  /* Status text indicator */
-  #status::before {
-    content: "BEAST MODE: OFF";
-  }
-  
-  #beastModeToggle:checked ~ #status::before {
-    content: "BEAST MODE: ON";
-  }
-  
-  /* Color the status text based on state */
-  #status {
-    color: var(--bm-accent); /* Red when off */
-    border-left-color: var(--bm-accent);
-  }
-  
-  #beastModeToggle:checked ~ #status {
-    color: var(--bm-neon); /* Green when on */
-    border-left-color: var(--bm-neon);
-  }
+}
 
 /* ===== MAP STYLING ===== */
 #map {
-  height: 400px;
-  width: 100%;
-  margin: 20px 0;
-  border: 3px solid var(--bm-neon);
-  border-radius: 8px;
-  filter: drop-shadow(var(--bm-glow));
+    height: 400px;
+    width: 100%;
+    margin: 20px 0;
+    border: 3px solid var(--bm-neon);
+    border-radius: 8px;
+    filter: drop-shadow(var(--bm-glow));
 }
 
 /* ===== STATUS DISPLAY ===== */
 #status {
-  padding: 12px;
-  background-color: rgba(0,0,0,0.5);
-  border-radius: 6px;
-  border-left: 4px solid var(--bm-neon);
-  margin: 15px 0;
-  font-family: var(--bm-font-secondary);
-  text-shadow: 0 0 5px var(--bm-neon);
-  text-align: center;
-  font-weight: bold;
+    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    border-left: 4px solid var(--bm-neon);
+    margin: 15px 0;
+    font-family: var(--bm-font-secondary);
+    text-shadow: 0 0 5px var(--bm-neon);
+    text-align: center;
+    font-weight: bold;
 }
 
 /* ===== SHOWER LIST ===== */
 #showerList {
-  margin-top: 20px;
-  background-color: rgba(20,20,20,0.8);
-  border-radius: 8px;
-  padding: 15px;
-  border: 1px solid #333;
+    margin-top: 20px;
+    background-color: rgba(20, 20, 20, 0.8);
+    border-radius: 8px;
+    padding: 15px;
+    border: 1px solid #333;
 }
 
 .shower-item {
-  padding: 12px;
-  border-bottom: 1px solid #333;
-  transition: all 0.3s;
+    padding: 12px;
+    border-bottom: 1px solid #333;
+    transition: all 0.3s;
 }
 
 .shower-item:last-child {
-  border-bottom: none;
+    border-bottom: none;
 }
 
 .shower-item:hover {
-  background-color: rgba(50,50,50,0.5);
-  transform: translateX(5px);
+    background-color: rgba(50, 50, 50, 0.5);
+    transform: translateX(5px);
 }
 
 /* ===== ANIMATIONS ===== */
 @keyframes pulse {
-  0% { 
-    opacity: 0.8;
-    text-shadow: 0 0 5px var(--bm-accent);
-  }
-  100% { 
-    opacity: 1;
-    text-shadow: 0 0 20px var(--bm-accent), 0 0 30px #FF4500;
-  }
+    0% {
+        opacity: 0.8;
+        text-shadow: 0 0 5px var(--bm-accent);
+    }
+    100% {
+        opacity: 1;
+        text-shadow:
+            0 0 20px var(--bm-accent),
+            0 0 30px #ff4500;
+    }
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-  
-  .container {
-    padding: 20px;
-    margin: 0 15px;
-  }
-  
-  #map {
-    height: 300px;
-  }
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .container {
+        padding: 20px;
+        margin: 0 15px;
+    }
+
+    #map {
+        height: 300px;
+    }
 }
 
- 
 .modal {
     position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  transition: 200ms ease-in-out;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  z-index: 10;
-  background-color: white;
-  width: 500px;
-  max-width: 80%;
-
-
-  }
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+}
 
 .modal.active {
     transform: translate(-50%, -50%) scale(1);
-  }
+}
 
-  .modal-header {
+.modal-header {
     padding: 10px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #ccc;
-  }
- 
-  .modal-header .title {
+}
+
+.modal-header .title {
     font-size: 1.5rem;
     font-weight: bold;
-  }
-  
-  .modal-header .close-button {
+}
+
+.modal-header .close-button {
     cursor: pointer;
     border: none;
     outline: none;
     background: none;
     font-size: 1.25rem;
     font-weight: bold;
-  }
-  
-  .modal-body {
-    padding: 10px 15px;
-  }
+}
 
-  .modal-body #modal-photo {
-    width: 90%;  /* Adjust to your desired size (e.g., 200px) */
-    height: auto;       /* Maintains aspect ratio */
+.modal-body {
+    padding: 10px 15px;
+}
+
+.modal-body #modal-photo {
+    width: 90%; /* Adjust to your desired size (e.g., 200px) */
+    height: auto; /* Maintains aspect ratio */
     border-radius: 10px;
     margin-top: 10px;
-    display: block;     /* Ensures margin works properly */
-    max-width: 100%;   
-    align-items: center; 
-    }
-  
-  #overlay {
+    display: block; /* Ensures margin works properly */
+    max-width: 100%;
+    align-items: center;
+}
+
+#overlay {
     position: fixed;
     opacity: 0;
     transition: 200ms ease-in-out;
@@ -289,12 +283,11 @@ h1 {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, 0.5);
     pointer-events: none;
-  }
-  
-  #overlay.active {
+}
+
+#overlay.active {
     opacity: 1;
     pointer-events: all;
-  } 
-
+}
