@@ -223,3 +223,40 @@ h1 {
     height: 300px;
   }
 }
+
+a.selected {
+    background-color:#1F75CC;
+    color:white;
+    z-index:100;
+  }
+  
+  .messagepop {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+  /* transform: translate(-50%, -50%) scale(0); */
+  /* transition: 200ms ease-in-out; */
+  /* border: 1px solid black; */
+  border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  background-color: white;
+  width: 500px;
+
+  max-width: 80%;
+  }
+  
+  /* label {
+    display: block;
+    margin-bottom: 3px3;
+    padding-left: 15px;
+    text-indent: -15px;
+  }
+   */
+  .messagepop p, .messagepop.div {
+    border-bottom: 1px solid #EFEFEF;
+    margin: 8px 0;
+    padding-bottom: 8px;
+  }
