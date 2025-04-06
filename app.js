@@ -1,6 +1,7 @@
 async function initMap() {
   const { Map } = await google.maps.importLibrary("maps");
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+  let beastModeOn = false;
 
   async function addLocations(map) {
     try {
@@ -116,15 +117,68 @@ async function initMap() {
   });
 
   $(document).ready(function () {
+    const $openModalButtons = $('[data-modal-target]');
+    const $closeModalButtons = $('[data-close-button]');
+    const $overlay = $('#overlay'); // Now properly waits for DOM
+    
     $("#beastModeToggle").on("change", function () {
       if ($(this).is(":checked")) {
         getCurrentLocation(map);
         addLocations(map);
+
+        beastModeOn = true;
       } else {
         // Clear markers and reset map
+        alert("Beast Mode is off. Map will reset.");
+
+        const $modal = $("#modal"); // Replace with your modal's ID or selector
+        openModal($modal);
+        beastModeOn = false;
+
         map.setCenter({ lat: 44.5648, lng: -123.276 });
         map.setZoom(15);
+
       }
     });
+
+      // Modal open/close logic
+  $openModalButtons.on('click', function () {
+    const modalSelector = $(this).data('modal-target');
+    const $modal = $(modalSelector);
+    openModal($modal);
   });
+
+  $overlay.on('click', function () {
+    $('.modal.active').each(function () {
+      closeModal($(this));
+    });
+  });
+
+  $closeModalButtons.on('click', function () {
+    const $modal = $(this).closest('.modal');
+    closeModal($modal);
+  });
+
+  // Beast Mode Toggle (unchanged)
+  $("#beastModeToggle").on("change", function () {
+    if ($(this).is(":checked")) {
+      getCurrentLocation(map);
+    } else {
+      // TODO: Handle toggle off
+    }
+  });
+  });
+}
+
+// Modal functions (updated for jQuery)
+function openModal($modal) {
+  if (!$modal || $modal.length === 0) return;
+  $modal.addClass('active');
+  $('#overlay').addClass('active');
+}
+
+function closeModal($modal) {
+  if (!$modal || $modal.length === 0) return;
+  $modal.removeClass('active');
+  $('#overlay').removeClass('active');
 }
