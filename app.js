@@ -2,6 +2,8 @@ async function initMap() {
   const { Map } = await google.maps.importLibrary("maps");
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
   let beastModeOn = false;
+  let locationPermissionDenied = false;
+
 
   async function addLocations(map) {
     try {
@@ -93,6 +95,14 @@ async function initMap() {
         (error) => {
           console.error("Error getting current location:", error);
           // Handle geolocation error
+          if (error.code === error.PERMISSION_DENIED) {
+            // User denied location - switch off toggle and show modal
+            $("#beastModeToggle").prop("checked", false).trigger("change");
+            beastModeOn = false;
+            const $modal = $("#modal");
+            openModal($modal);
+
+          }
         },
       );
     }
@@ -129,8 +139,6 @@ async function initMap() {
         beastModeOn = true;
       } else {
         // Clear markers and reset map
-        alert("Beast Mode is off. Map will reset.");
-
         const $modal = $("#modal"); // Replace with your modal's ID or selector
         openModal($modal);
         beastModeOn = false;

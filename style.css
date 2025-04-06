@@ -231,7 +231,7 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
   transition: 200ms ease-in-out;
-  border: 1px solid black;
+  border: 1px solid #ccc;
   border-radius: 10px;
   z-index: 10;
   background-color: white;
@@ -250,11 +250,11 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #ccc;
   }
  
   .modal-header .title {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: bold;
   }
   
@@ -270,6 +270,16 @@ h1 {
   .modal-body {
     padding: 10px 15px;
   }
+
+  .modal-body #modal-photo {
+    width: 90%;  /* Adjust to your desired size (e.g., 200px) */
+    height: auto;       /* Maintains aspect ratio */
+    border-radius: 10px;
+    margin-top: 10px;
+    display: block;     /* Ensures margin works properly */
+    max-width: 100%;   
+    align-items: center; 
+    }
   
   #overlay {
     position: fixed;
@@ -287,3 +297,4 @@ h1 {
     opacity: 1;
     pointer-events: all;
   } 
+
