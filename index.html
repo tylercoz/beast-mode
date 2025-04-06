@@ -73,20 +73,23 @@
     <body>
         <div class="container">
             <h1>BEAST MODE</h1>
-            <p class="tagline">
-                Need to <span class="beast-mode-text">shower</span>? Activate
-                Beast Mode to find the nearest shower on campus.
-            </p>
-
+            <p class="tagline">Need to <span class="beast-mode-text">shower</span>? Activate Beast Mode to find the nearest shower on campus.</p>
+            
             <!-- Beast Mode Toggle Switch -->
             <label class="beast-switch">
-                <input type="checkbox" id="beastModeToggle" />
+                <input type="checkbox" id="beastModeToggle">
                 <span class="beast-slider"></span>
             </label>
-
+            <div id="status"></div>
             <div id="map"></div>
-            <div id="status">Beast Mode OFF</div>
+            <!-- <div id="status">Beast Mode: OFF</div> -->
             <div id="showerList"></div>
+            <section id="bathroomList" class="hidden">
+                <h2 class="cyber-title">shower</h2>
+                <div class="bathroom-grid">
+                    <!-- Items will be added dynamically -->
+                </div>
+            </section>
         </div>
     </body>
 </html>
